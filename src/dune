@@ -1,0 +1,20 @@
+(library
+ (public_name pipewire)
+ (libraries ctypes-foreign)
+ (ctypes
+  (external_library_name libpipewire-0.3)
+  (build_flags_resolver pkg_config)
+  (headers (include "pipewire/pipewire.h"))
+  (type_description
+   (instance Types)
+   (functor Type_description))
+  (function_description
+   (concurrency unlocked)
+   (instance Functions)
+   (functor Function_description)
+  )
+  (generated_types Types_generated)
+  (generated_entry_point C)
+ )
+)
+
